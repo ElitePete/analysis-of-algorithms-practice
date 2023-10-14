@@ -4,7 +4,6 @@
 #include <iostream>
 #include "clockType.h"
 
-using namespace std;
 
 void clockType::setTime(int hours, int minutes, int seconds)
 {
@@ -63,16 +62,16 @@ void clockType::incrementSeconds()
 void clockType::printTime() const
 {
     if (hr < 10)
-        cout << "0";
-    cout << hr << ":";
+        std::cout << "0";
+    std::cout << hr << ":";
 
     if (min < 10)
-        cout << "0";
-    cout << min << ":";
+        std::cout << "0";
+    std::cout << min << ":";
 
     if (sec < 10)
-        cout << "0";
-    cout << sec;
+        std::cout << "0";
+    std::cout << sec;
 }
 
 bool clockType::equalTime(const clockType& otherClock) const

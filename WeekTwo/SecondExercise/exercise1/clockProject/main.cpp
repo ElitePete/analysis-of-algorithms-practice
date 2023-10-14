@@ -1,38 +1,53 @@
 #include <iostream>
 #include "extClockType.h"
 
-using namespace std;
 
 int main() {
     extClockType myClock(10, 15, 59, "UTC+1");
     extClockType anotherClock;
+    clockType employee[10];
 
-    cout << "My clock: ";
+
+    std::cout << "My clock: ";
     myClock.printTime();
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << "Your clock: ";
+    std::cout << "Your clock: ";
     anotherClock.printTime();
-    cout << endl;
+    std::cout << std::endl;
 
     myClock.incrementSeconds();
 
-    cout << "One second later, my clock: ";
+    std::cout << "One second later, my clock: ";
     myClock.printTime();
-    cout << endl;
+    std::cout << std::endl;
 
     anotherClock.setTime(23, 59, 59);
     anotherClock.setTimeZone("UTC-5");
 
-    cout << "Your clock set to almost midnight: ";
+    std::cout << "Your clock set to almost midnight: ";
     anotherClock.printTime();
-    cout << endl;
+    std::cout << std::endl;
 
     anotherClock.incrementSeconds();
 
-    cout << "One second later, your clock: ";
+    std::cout << "One second later, your clock: ";
     anotherClock.printTime();
-    cout << endl;
+    std::cout << std::endl;
+
+
+
+
+    for (int j = 0; j < 10; j++)
+    {
+        employee[j].setTime(8, 0, 0);
+
+        std::cout << "Employee " << (j + 1) << " arrived at ";
+        employee[j].printTime();
+        std::cout << std::endl;
+    }
+
+
 
     return 0;
 }

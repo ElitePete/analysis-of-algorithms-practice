@@ -1,14 +1,13 @@
 #include "extClockType.h"
 #include <iostream>
 
-using namespace std;
 
-void extClockType::setTimeZone(const string& tz)
+void extClockType::setTimeZone(const std::string& tz)
 {
     timeZone = tz;
 }
 
-string extClockType::getTimeZone() const
+std::string extClockType::getTimeZone() const
 {
     return timeZone;
 }
@@ -16,10 +15,10 @@ string extClockType::getTimeZone() const
 void extClockType::printTime() const
 {
     clockType::printTime();
-    cout << " " << timeZone;
+    std::cout << " " << timeZone;
 }
 
-extClockType::extClockType(int hours, int minutes, int seconds, const string& tz)
+extClockType::extClockType(int hours, int minutes, int seconds, const std::string& tz)
     : clockType(hours, minutes, seconds)
 {
     setTimeZone(tz);

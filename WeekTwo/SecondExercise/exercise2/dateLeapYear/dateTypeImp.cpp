@@ -1,6 +1,6 @@
 #include "dateType.h"
 #include <iostream>
-using namespace std;
+
 
 void dateType::setDate(int month, int day, int year) {
     if (year > 0) {
@@ -61,7 +61,7 @@ int dateType::getYear() const {
 }
 
 void dateType::printDate() const {
-    cout << dMonth << "-" << dDay << "-" << dYear;
+    std::cout << dMonth << "-" << dDay << "-" << dYear;
 }
 
 bool dateType::isLeapYear() {
